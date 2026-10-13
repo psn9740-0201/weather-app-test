@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  background: linear-gradient(160deg, #74b9ff, #a29bfe);
+  color: #2d3436;
+}
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  padding: 28px 24px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 20px;
+  font-size: 1.5rem;
+}
+
+form {
+  display: flex;
+  gap: 8px;
+}
+
+input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #dfe6e9;
+  border-radius: 8px;
+}
+
+input:focus {
+  outline: 2px solid #74b9ff;
+  border-color: transparent;
+}
+
+button {
+  padding: 10px 16px;
+  font-size: 1rem;
+  color: #fff;
+  background: #0984e3;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0773c5;
+}
+
+button:disabled {
+  background: #b2bec3;
+  cursor: default;
+}
+
+.message {
+  min-height: 1.2em;
+  margin: 14px 0 0;
+  color: #d63031;
+}
+
+.message.loading {
+  color: #636e72;
+}
+
+.result {
+  margin-top: 8px;
+}
+
+.hidden {
+  display: none;
+}
+
+.icon {
+  font-size: 4rem;
+}
+
+.result h2 {
+  margin: 4px 0;
+}
+
+.temp {
+  margin: 4px 0;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.desc {
+  margin: 0 0 16px;
+  font-size: 1.1rem;
+  color: #636e72;
+}
+
+.details {
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 12px 0;
+  list-style: none;
+  border-top: 1px solid #dfe6e9;
+  font-size: 0.9rem;
+  color: #636e72;
+}
+
+.details strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 1rem;
+  color: #2d3436;
+}
+
+.time {
+  margin: 8px 0 0;
+  font-size: 0.8rem;
+  color: #b2bec3;
+}
