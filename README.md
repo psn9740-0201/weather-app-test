@@ -11,11 +11,15 @@
 ```
 .
 ├── backend/
-│   └── server.js     ← 백엔드: 날씨 API 호출 + 프론트엔드 파일 제공
+│   ├── weather.js    ← 백엔드 핵심: Open-Meteo에서 날씨를 가져오는 로직
+│   └── server.js     ← 로컬 실행용 서버: /api/weather + 프론트엔드 파일 제공
+├── api/
+│   └── weather.js    ← Vercel 배포용 함수 (backend/weather.js 를 그대로 사용)
 ├── frontend/
 │   ├── index.html    ← 화면 구조
 │   ├── style.css     ← 디자인
 │   └── app.js        ← 버튼 클릭 시 백엔드에 요청하고 결과 표시
+├── vercel.json       ← Vercel 설정 (frontend 폴더를 웹사이트로 사용)
 └── README.md
 ```
 
@@ -56,6 +60,20 @@
    터미널에서 `Ctrl + C` 를 누릅니다.
 
 > 참고: `frontend/index.html` 파일을 더블클릭해서 직접 열면 백엔드와 연결되지 않습니다. 반드시 서버를 실행한 뒤 http://localhost:3000 으로 접속하세요.
+
+## Vercel에 배포하기
+
+Vercel은 계속 켜져 있는 서버(`backend/server.js`)를 실행하지 않습니다. 대신 다음과 같이 동작합니다.
+
+- `vercel.json` 설정에 따라 `frontend` 폴더가 웹사이트로 제공됩니다.
+- `api/weather.js` 파일이 자동으로 `/api/weather` 주소의 서버리스 함수가 됩니다.
+
+배포 순서:
+
+1. https://vercel.com 에서 GitHub 계정으로 로그인합니다.
+2. **Add New → Project** 에서 이 GitHub 저장소를 선택하고 **Import** 합니다.
+3. 설정은 기본값 그대로 두고(Framework Preset: Other) **Deploy** 를 누릅니다.
+4. 이후 GitHub에 푸시할 때마다 Vercel이 자동으로 다시 배포합니다.
 
 ## API 직접 확인해 보기
 
